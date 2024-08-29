@@ -137,3 +137,15 @@ What is needed:
 
 // END of pseudocode above
 
+// THE FINAL CODE
+
+console.log("Let the game begin!");
+console.log("Rock, paper, scissors indeed!");
+
+let computerScore = 0;
+let humanScore = 0;
+let roundCounter = 0;
+
+function getComputerChoice() {
+    
+}
