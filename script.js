@@ -146,7 +146,7 @@ console.log("Rock, paper, scissors indeed!");
 
 let computerScore = 0;
 let humanScore = 0;
-let roundCounter = 0;
+let roundCounter = 1;
 
 function getComputerChoice() {
     let x = Math.floor(Math.random() * (Math.floor(3) - Math.ceil(0)) + Math.ceil(0));
@@ -220,4 +220,20 @@ function playRound(humanChoice, computerChoice) {
     console.log("SCORE     Computer: " + computerScore + " You: " + humanScore);
 }
 
-playRound();
+function playGame() {
+
+    while (roundCounter < 6) {
+        playRound();
+    }
+
+
+    if (humanScore > computerScore) {
+        console.log("You won! CONGRATS DUDE!");
+    } else if (computerScore > humanScore) {
+        console.log("You lost! Maybe next time!");
+    }
+
+    
+}
+
+playGame();
