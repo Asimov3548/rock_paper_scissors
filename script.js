@@ -53,6 +53,8 @@ What is needed:
         ELSE IF randomNumber equal to 3
             SET computerChoice to scissors    
         END_IF
+
+        
     ENDFUNCTION      
 
     FUNCTION getHumanChoice
@@ -147,5 +149,15 @@ let humanScore = 0;
 let roundCounter = 0;
 
 function getComputerChoice() {
-    
+    let x = Math.floor(Math.random() * (Math.floor(3) - Math.ceil(0)) + Math.ceil(0));
+
+    if (x == 0) {
+        return "rock";
+    } else if (x == 1) {
+        return "paper";
+    } else if (x == 2) {
+        return "scissors";
+    }
 }
+
+console.log(getComputerChoice());
