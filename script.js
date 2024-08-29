@@ -173,3 +173,51 @@ function getHumanChoice() {
     return choice;
 }
 
+function playRound(humanChoice, computerChoice) {
+    console.log("Round number: " + roundCounter);
+
+    let rock = "rock";
+    let paper = "paper";
+    let scissors = "scissors";
+
+    computerChoice = getComputerChoice();
+
+    humanChoice = getHumanChoice();
+
+    if (humanChoice === computerChoice) {
+        console.log("It's a tie!");
+    } else if (humanChoice == rock && computerChoice == scissors ) {
+        console.log("Rock beats scissors! You won this round!");
+
+        humanScore += 1;
+    } else if (humanChoice == scissors && computerChoice == paper ) {
+        console.log("Scissors beat paper! You won this round!");
+
+        humanScore += 1;
+    } else if (humanChoice == paper && computerChoice == rock ) {
+        console.log("Paper beats rock! You won this round!");
+
+        humanScore += 1;
+    } else if (computerChoice == rock && humanChoice == scissors ) {
+        console.log(" HAHAHA...");
+        console.log(" Rock beats scissors! You lose this round!");
+
+        computerScore += 1;
+    } else if (computerChoice == scissors && humanChoice == paper ) {
+        console.log(" HAHAHA...");
+        console.log(" Scissors beat paper! You lose this round!");
+
+        computerScore += 1;
+    } else if (computerChoice == paper && humanChoice == rock ) {
+        console.log(" HAHAHA...");
+        console.log(" Paper beats rock! You lose this round!");
+
+        computerScore += 1;
+    }
+
+    roundCounter += 1;
+
+    console.log("SCORE     Computer: " + computerScore + " You: " + humanScore);
+}
+
+playRound();
