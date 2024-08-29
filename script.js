@@ -72,9 +72,9 @@ What is needed:
     FUNCTION playRound (humanChoice, computerChoice)
         PRINT "Round number: " + roundCounter
 
-        CALL getComputerChoice
+        SET computerChoice to CALL getComputerChoice
 
-        CALL getHumanChoice
+        SET humanChoice to CALL getHumanChoice
 
         IF humanChoice equals computerChoice
             PRINT "It's a tie!"
