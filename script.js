@@ -160,4 +160,16 @@ function getComputerChoice() {
     }
 }
 
-console.log(getComputerChoice());
+function getHumanChoice() {
+    let choice = prompt("Type your choice: rock, paper or scrissors").toLowerCase();
+
+    while (choice != "rock" && choice != "paper" && choice != "scissors" ) {
+        console.log("Wrong choice! Choose one of accepted options! Type: rock, paper or scissors");
+
+        choice = prompt("Type your choice: rock, paper or scrissors").toLowerCase();
+    }
+    console.log(choice);
+
+    return choice;
+}
+
