@@ -185,7 +185,24 @@ function roundBanner() {
 }
 
 function playRound(humanChoice, computerChoice) {
-    roundBanner();
+    const body = document.querySelector("body");
+    const div = document.createElement("div");
+    
+    if (computerScore <= 5 && humanScore <= 5) {
+        roundBanner();
+    } else {
+        div.textContent = "THE END!!!";
+    }
+    
+    if (computerScore === 5) {
+        div.textContent = "THE END Computer WON!!!";
+        body.appendChild(div);
+    } else if (humanScore === 5) {
+        div.textContent = "THE END You WON!!!";
+        body.appendChild(div);
+    }
+    
+    
 
     console.log("Round number: " + roundCounter);
 
