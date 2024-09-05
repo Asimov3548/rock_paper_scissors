@@ -173,8 +173,20 @@ function getComputerChoice() {
     return choice;
 } */
 
+function roundBanner() {
+    const div = document.createElement("div");
+    div.textContent = "ROUND: " + roundCounter;
+    const p = document.createElement("p");
+    p.textContent = "SCORE | " + "Computer: " + computerScore + " Human: " + humanScore;
+
+    const body = document.querySelector("body");
+    body.appendChild(div);
+    body.appendChild(p);
+}
+
 function playRound(humanChoice, computerChoice) {
-    
+    roundBanner();
+
     console.log("Round number: " + roundCounter);
 
     let rock = "rock";
