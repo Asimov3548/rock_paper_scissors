@@ -160,20 +160,21 @@ function getComputerChoice() {
     }
 }
 
-function getHumanChoice() {
+/* function getHumanChoice() {
     let choice = prompt("Type your choice: rock, paper or scrissors").toLowerCase();
 
     while (choice != "rock" && choice != "paper" && choice != "scissors" ) {
-        console.log("Wrong choice! Choose one of accepted options! Type: rock, paper or scissors");
+        alert("Wrong choice! Choose one of accepted options! Type: rock, paper or scissors");
 
         choice = prompt("Type your choice: rock, paper or scrissors").toLowerCase();
     }
     console.log(choice);
 
     return choice;
-}
+} */
 
 function playRound(humanChoice, computerChoice) {
+    
     console.log("Round number: " + roundCounter);
 
     let rock = "rock";
@@ -182,7 +183,7 @@ function playRound(humanChoice, computerChoice) {
 
     computerChoice = getComputerChoice();
 
-    humanChoice = getHumanChoice();
+    humanChoice = choice;
 
     if (humanChoice === computerChoice) {
         console.log("It's a tie!");
@@ -235,5 +236,41 @@ function playGame() {
 
     
 }
+/* let btn = document.querySelector(".rock-class");
 
-playGame();
+btn.addEventListener("click", () => {
+    console.log("działa");
+}); */
+
+
+
+/* function getHumanChoice() {
+    let choice;
+    
+    const buttons = document.querySelectorAll("button");
+    
+    buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+            choice = "rock";
+        })
+    })
+    
+    return choice;
+} */
+
+let choice;
+    
+const buttons = document.querySelectorAll("button");
+    
+buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+        choice = (button.id);
+        let humanChoice = choice;
+        playRound();
+    })
+ })
+    
+    
+
+
+/* playGame(); */
