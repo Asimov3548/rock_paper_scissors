@@ -188,18 +188,48 @@ function roundBanner() {
 
 function removeOldBanner() {
     const div = document.querySelector(".round_div");
-    const p = document.querySelector("round_p");
+    const p = document.querySelector(".round_p");
     const body = document.querySelector("body");
 
     body.removeChild(div);
     body.removeChild(p);
 }
 
+function endOfGame() {
+    if (computerScore < 5 && humanScore < 5) {
+        roundBanner();
+    } else {
+        const body = document.querySelector("body");
+        const div = document.createElement("div");
+        div.textContent = "The END my Friend!";
+        body.appendChild(div);
+        if (humanScore > computerScore) {
+            
+            const div2 = document.createElement("div");
+            div2.textContent = "You WON!";
+            body.appendChild(div2);
+        } else {
+            
+            const div3 = document.createElement("div");
+            div3.textContent = "You lost!! Computer WON!";
+            body.appendChild(div3);
+        }
+    }
+}
+
 function playRound(humanChoice, computerChoice) {
     const body = document.querySelector("body");
     const div = document.createElement("div");
     
-    if (computerScore <= 5 && humanScore <= 5) {
+    if (roundCounter > 1) {
+        removeOldBanner();
+        endOfGame();
+        
+    } else {
+        roundBanner();
+    }
+
+    /* if (computerScore <= 5 && humanScore <= 5) {
         roundBanner();
     } else {
         div.textContent = "THE END!!!";
@@ -211,7 +241,7 @@ function playRound(humanChoice, computerChoice) {
     } else if (humanScore === 5) {
         div.textContent = "THE END You WON!!!";
         body.appendChild(div);
-    }
+    } */
     
     
 
