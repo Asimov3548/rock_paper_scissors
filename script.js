@@ -190,6 +190,9 @@ function removeOldBanner() {
     const div = document.querySelector(".round_div");
     const p = document.querySelector("round_p");
     const body = document.querySelector("body");
+
+    body.removeChild(div);
+    body.removeChild(p);
 }
 
 function playRound(humanChoice, computerChoice) {
