@@ -175,13 +175,21 @@ function getComputerChoice() {
 
 function roundBanner() {
     const div = document.createElement("div");
+    div.classList.add("round_div");
+
     div.textContent = "ROUND: " + roundCounter;
     const p = document.createElement("p");
+    p.classList.add("round_p");
     p.textContent = "SCORE | " + "Computer: " + computerScore + " Human: " + humanScore;
-
     const body = document.querySelector("body");
     body.appendChild(div);
     body.appendChild(p);
+}
+
+function removeOldBanner() {
+    const div = document.querySelector(".round_div");
+    const p = document.querySelector("round_p");
+    const body = document.querySelector("body");
 }
 
 function playRound(humanChoice, computerChoice) {
