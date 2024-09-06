@@ -243,8 +243,6 @@ function playRound(humanChoice, computerChoice) {
         body.appendChild(div);
     } */
     
-    
-
     console.log("Round number: " + roundCounter);
 
     let rock = "rock";
@@ -285,7 +283,6 @@ function playRound(humanChoice, computerChoice) {
 
         computerScore += 1;
     }
-
     roundCounter += 1;
 
     console.log("SCORE     Computer: " + computerScore + " You: " + humanScore);
@@ -297,14 +294,11 @@ function playGame() {
         playRound();
     }
 
-
     if (humanScore > computerScore) {
         console.log("You won! CONGRATS DUDE!");
     } else if (computerScore > humanScore) {
         console.log("You lost! Maybe next time!");
     }
-
-    
 }
 /* let btn = document.querySelector(".rock-class");
 
@@ -339,8 +333,4 @@ buttons.forEach((button) => {
         playRound();
     })
  })
-    
-    
-
-
 /* playGame(); */
